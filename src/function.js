@@ -1,7 +1,69 @@
-// Dropdown menu
+// Hämtar html-element från DOM
 const menuEl = document.getElementById("menu");
 const dropdownEl = document.getElementById("dropdown-menu");
 
+//Eventlistener
 menuEl.addEventListener('click', () => {
     dropdownEl.classList.toggle('show');
 })
+
+// Initialisering när sidan laddas om
+window.onload = init;
+
+// Funktion för att initialisera applikationen och hämta information
+function init() {
+    processData();
+}
+
+//Hämta kurser
+async function getCoursesInfo() {
+    try {
+        const response = await fetch('https://webbutveckling.miun.se/files/ramschema_ht24.json');
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Fetch error:', error);
+        throw error;
+    }
+};
+
+// Användning av den asynkrona funktionen
+async function processData() {
+    try {
+        const result = await getCoursesInfo();
+        console.log('Received data:', result);
+        coursesInfoDisplay(result);
+        window.courses = result;
+    } catch (error) {
+        console.error('Error processing data:', error);
+    }
+}
+
+// Visa information för kurser
+function coursesInfoDisplay(courses) {
+    const coursesListEl = document.getElementById('courses-list'); 
+    // Rensa tidigare innehåll
+    coursesListEl.innerHTML = ''; 
+
+    // Loopa genom och skapa nya list element
+    courses.forEach(course => {
+        const newRowEl = document.createElement('tr');
+
+        const courseCodeEl = document.createElement('td');
+        const courseCodeTextEl = document.createTextNode(course.code);
+        courseCodeEl.appendChild(courseCodeTextEl);
+        newRowEl.appendChild(courseCodeEl); 
+
+        const courseNameEl = document.createElement('td');
+        const courseNameTextEl = document.createTextNode(course.coursename);
+        courseNameEl.appendChild(courseNameTextEl);
+        newRowEl.appendChild(courseNameEl); 
+
+        const courseProgEl = document.createElement('td');
+        const courseProgTextEl = document.createTextNode(course.progression);
+        courseProgEl.appendChild(courseProgTextEl);
+        newRowEl.appendChild(courseProgEl);
+
+        coursesListEl.appendChild(newRowEl);
+    });
+}
