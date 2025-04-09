@@ -2,6 +2,11 @@
 
     a {
         text-decoration: none;
+        color: #000080;
+    }
+    
+    a:active {
+        color: #000080;
     }
     
     .dropdown-menu {
@@ -88,6 +93,11 @@
 @media screen and (max-width: 950px) and (min-width: 650px){
     a {
         text-decoration: none;
+        color: #000080;
+    }
+    
+    a:active {
+        color: #000080;
     }
     
     .dropdown-menu {
@@ -174,6 +184,11 @@
 @media screen and (max-width: 650px) {
     a {
         text-decoration: none;
+        color: #000080;
+    }
+    
+    a:active {
+        color: #000080;
     }
     
     .dropdown-menu {

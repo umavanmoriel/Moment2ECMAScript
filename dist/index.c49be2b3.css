@@ -1,6 +1,11 @@
 @media screen and (width >= 500px) {
   a {
+    color: navy;
     text-decoration: none;
+  }
+
+  a:active {
+    color: navy;
   }
 
   .dropdown-menu {
@@ -85,7 +90,12 @@
 
 @media screen and (width <= 950px) and (width >= 650px) {
   a {
+    color: navy;
     text-decoration: none;
+  }
+
+  a:active {
+    color: navy;
   }
 
   .dropdown-menu {
@@ -170,7 +180,12 @@
 
 @media screen and (width <= 650px) {
   a {
+    color: navy;
     text-decoration: none;
+  }
+
+  a:active {
+    color: navy;
   }
 
   .dropdown-menu {
