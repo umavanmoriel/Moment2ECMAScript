@@ -1,0 +1,37 @@
+@media screen and (min-width: 500px) {
+    footer {
+        background-color: aqua;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: darkblue;
+    }
+    
+    footer p {
+        font-family: 'Merriweather';
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 36px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    footer {
+        background-color: aqua;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: darkblue;
+    }
+    
+    footer p {
+        font-family: 'Merriweather';
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 36px;
+    }
+}

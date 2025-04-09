@@ -1,0 +1,38 @@
+@media screen and (width >= 500px) {
+  footer {
+    color: #00008b;
+    background-color: #0ff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    display: flex;
+  }
+
+  footer p {
+    font-family: Merriweather;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 36px;
+  }
+}
+
+@media screen and (width <= 500px) {
+  footer {
+    color: #00008b;
+    background-color: #0ff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    display: flex;
+  }
+
+  footer p {
+    font-family: Merriweather;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 36px;
+  }
+}
+/*# sourceMappingURL=index.09279bd7.css.map */

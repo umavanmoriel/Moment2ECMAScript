@@ -1,0 +1,23 @@
+{
+  "name": "moment1",
+  "version": "1.0.0",
+  "author": "Uma Vanmoriel",
+  "license": "ISC",
+  "source": "src/pages/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "Firefox ESR",
+    "not dead"
+  ],
+  "description": "",
+  "devDependencies": {
+    "parcel": "^2.13.3",
+    "sharp": "^0.33.5",
+    "svgo": "^3.3.2"
+  }
+}
