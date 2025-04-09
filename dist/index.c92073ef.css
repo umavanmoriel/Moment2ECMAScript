@@ -42,12 +42,17 @@
   th {
     color: #fff;
     text-align: left;
+    cursor: pointer;
     background-color: #0366d0;
     padding: 10px;
     font-family: Roboto;
     font-size: 22px;
     font-weight: 700;
     line-height: 36px;
+  }
+
+  th:active {
+    text-decoration: underline;
   }
 
   td {

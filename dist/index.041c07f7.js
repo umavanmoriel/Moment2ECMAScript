@@ -599,9 +599,21 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 // Hämtar html-element från DOM
 const menuEl = document.getElementById("menu");
 const dropdownEl = document.getElementById("dropdown-menu");
+const courseCodeEl = document.getElementById("courseCode");
+const courseNameEl = document.getElementById("courseName");
+const courseProgEl = document.getElementById("courseProg");
 //Eventlistener
 menuEl.addEventListener('click', ()=>{
     dropdownEl.classList.toggle('show');
+});
+courseCodeEl.addEventListener("click", (event)=>{
+    courseCodeSort(courses);
+});
+courseNameEl.addEventListener("click", (event)=>{
+    courseNameSort(courses);
+});
+courseProgEl.addEventListener("click", (event)=>{
+    courseProgSort(courses);
 });
 // Initialisering när sidan laddas om
 window.onload = init;
@@ -632,12 +644,12 @@ async function processData() {
     }
 }
 // Visa information för kurser
-function coursesInfoDisplay(courses) {
+function coursesInfoDisplay(courses1) {
     const coursesListEl = document.getElementById('courses-list');
     // Rensa tidigare innehåll
     coursesListEl.innerHTML = '';
     // Loopa genom och skapa nya list element
-    courses.forEach((course)=>{
+    courses1.forEach((course)=>{
         const newRowEl = document.createElement('tr');
         const courseCodeEl = document.createElement('td');
         const courseCodeTextEl = document.createTextNode(course.code);
@@ -653,6 +665,21 @@ function coursesInfoDisplay(courses) {
         newRowEl.appendChild(courseProgEl);
         coursesListEl.appendChild(newRowEl);
     });
+}
+// Sortera efter kod
+function courseCodeSort(courses1) {
+    const sortedCourses = courses1.sort((a, b)=>a.code.localeCompare(b.code));
+    coursesInfoDisplay(sortedCourses);
+}
+// Sortera efter kursnamn
+function courseNameSort(courses1) {
+    const sortedNames = courses1.sort((a, b)=>a.coursename.localeCompare(b.coursename));
+    coursesInfoDisplay(sortedNames);
+}
+// Sortera efter progression
+function courseProgSort(courses1) {
+    const sortedProg = courses1.sort((a, b)=>a.progression.localeCompare(b.progression));
+    coursesInfoDisplay(sortedProg);
 }
 
 },{}]},["3i5S3","n0lrN"], "n0lrN", "parcelRequire94c2")

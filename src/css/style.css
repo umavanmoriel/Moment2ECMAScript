@@ -50,6 +50,11 @@
         font-weight: 700;
         line-height: 36px;
         color: white;
+        cursor: pointer;
+    }
+
+    th:active {
+        text-decoration: underline;
     }
     
     td {

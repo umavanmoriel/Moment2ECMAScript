@@ -1,11 +1,27 @@
 // Hämtar html-element från DOM
 const menuEl = document.getElementById("menu");
 const dropdownEl = document.getElementById("dropdown-menu");
+const courseCodeEl = document.getElementById("courseCode");
+const courseNameEl = document.getElementById("courseName");
+const courseProgEl = document.getElementById("courseProg");
 
 //Eventlistener
 menuEl.addEventListener('click', () => {
     dropdownEl.classList.toggle('show');
 })
+
+courseCodeEl.addEventListener("click", (event) => {
+    courseCodeSort(courses);
+});
+
+courseNameEl.addEventListener("click", (event) => {
+    courseNameSort(courses);
+});
+
+courseProgEl.addEventListener("click", (event) => {
+    courseProgSort(courses);
+});
+
 
 // Initialisering när sidan laddas om
 window.onload = init;
@@ -66,4 +82,22 @@ function coursesInfoDisplay(courses) {
 
         coursesListEl.appendChild(newRowEl);
     });
+}
+
+// Sortera efter kod
+function courseCodeSort(courses) {
+    const sortedCourses = courses.sort((a, b) => a.code.localeCompare(b.code)); 
+    coursesInfoDisplay(sortedCourses); 
+}
+
+ // Sortera efter kursnamn
+function courseNameSort(courses) {
+    const sortedNames = courses.sort((a, b) => a.coursename.localeCompare(b.coursename));
+    coursesInfoDisplay(sortedNames);
+}
+
+// Sortera efter progression
+function courseProgSort(courses) {
+    const sortedProg = courses.sort((a, b) => a.progression.localeCompare(b.progression)); 
+    coursesInfoDisplay(sortedProg);
 }
