@@ -6,6 +6,34 @@
 }
 
 @media screen and (min-width: 900px) {
+    .search-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    #search-input {
+        padding: 10px;
+        width: 200px;
+        border: 1px solid #0366d0;
+        border-radius: 4px;
+        transition: box-shadow 0.3s ease;
+    }
+
+    #search-input:focus {
+        box-shadow: 0 4px 20px rgba(3, 102, 208, 0.5);
+        outline: none;
+    }
+    
+    .search-heading {
+        font-family: 'Roboto';
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 36px;
+        color: darkblue;
+    }
+
     body {
         background-color: rgba(0, 255, 255, 0.286);
     }
@@ -39,6 +67,35 @@
 }
 
 @media screen and (min-width: 500px) and (max-width: 900px) {
+    .search-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    #search-input {
+        padding: 10px;
+        width: 200px;
+        border: 1px solid #0366d0;
+        border-radius: 4px;
+        transition: box-shadow 0.3s ease;
+    }
+
+    #search-input:focus {
+        box-shadow: 0 4px 20px rgba(3, 102, 208, 0.5);
+        outline: none;
+    }
+    
+    .search-heading {
+        font-family: 'Roboto';
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 36px;
+        color: darkblue;
+    }
+
+
     body {
         background-color: rgba(0, 255, 255, 0.286);
     }
@@ -72,6 +129,35 @@
 }
 
 @media screen and (max-width: 500px) {
+    .search-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    #search-input {
+        padding: 10px;
+        width: 200px;
+        border: 1px solid #0366d0;
+        border-radius: 4px;
+        transition: box-shadow 0.3s ease;
+    }
+
+    #search-input:focus {
+        box-shadow: 0 4px 20px rgba(3, 102, 208, 0.5);
+        outline: none;
+    }
+    
+    .search-heading {
+        font-family: 'Roboto';
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 36px;
+        color: darkblue;
+    }
+
+
     body {
         background-color: rgba(0, 255, 255, 0.286);
     }
