@@ -602,6 +602,13 @@ const dropdownEl = document.getElementById("dropdown-menu");
 const courseCodeEl = document.getElementById("courseCode");
 const courseNameEl = document.getElementById("courseName");
 const courseProgEl = document.getElementById("courseProg");
+const searchInputEl = document.getElementById("search-input");
+// Initialisering när sidan laddas om
+window.onload = init;
+// Funktion för att initialisera applikationen och hämta information
+function init() {
+    processData();
+}
 //Eventlistener
 menuEl.addEventListener('click', ()=>{
     dropdownEl.classList.toggle('show');
@@ -615,12 +622,12 @@ courseNameEl.addEventListener("click", (event)=>{
 courseProgEl.addEventListener("click", (event)=>{
     courseProgSort(courses);
 });
-// Initialisering när sidan laddas om
-window.onload = init;
-// Funktion för att initialisera applikationen och hämta information
-function init() {
-    processData();
-}
+//Filtrera efter sökfras
+searchInputEl.addEventListener('input', function() {
+    const filterData = this.value.toLowerCase();
+    const filteredData = window.courses.filter((item)=>item.code.toLowerCase().includes(filterData) || item.coursename.toLowerCase().includes(filterData));
+    coursesInfoDisplay(filteredData);
+});
 //Hämta kurser
 async function getCoursesInfo() {
     try {
